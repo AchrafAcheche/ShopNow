@@ -1,0 +1,180 @@
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'poppins', sans-serif;
+    scroll-behavior: smooth;
+    
+}
+
+p{
+    font-size: large ;
+    color: #111;
+    text-align:center;
+    padding:  50px 10px
+    ;
+
+}
+input[type=image] {
+    padding: 2px 20px;
+}
+
+.boxs{
+    padding: 2px 20px;
+}
+.box{
+    box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 0px 1px inset, rgba(0, 0, 0, 0.9) 0px 0px 0px 1px;
+    text-align: center;
+   height: 200px;
+  width: 200px;
+  
+}
+
+.section3{
+    padding: 30px;
+    margin-top: 5%;
+}
+
+.section2{
+   text-align: center;
+   margin-bottom: 40px;
+}
+
+#i1{
+    width: 50%;
+    height:100%;
+    padding:5px 10px  
+}
+header{
+
+    margin-top: 2%;
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    padding: 20px 10px;
+    width: 100%;
+    z-index: 1;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    transition: 0.5s;
+}
+input[type=text] {
+    width:  30%;
+    height:100%;
+    padding:5px 10px; 
+    margin-left: 5px;
+    
+}
+input[type=button] {
+    color :black;
+    background-color: #fb911f;
+    font-size:medium ;
+
+
+
+}
+.recherche{
+    
+    margin-top: 5%;
+    ;
+}
+select{
+    width: 30%;
+    height:100%;
+    padding:5px 10px;
+}
+.logo{
+    color:#000;
+    font-weight: bold;
+    font-size: 2em;
+    text-decoration: none;
+}
+.logo span{
+    color: #fb911f;
+}
+
+.navbar{
+    display: flex;
+    position: relative;
+}
+.navbar li{
+    list-style: none;
+}
+.navbar a{
+    color:#000;
+    text-decoration: none;
+    margin-left: 30px;
+    font-weight: 700;
+}
+
+.ajout-annonce{
+    padding: 10px 20px;
+    background: #fb911f;
+   margin-top: -10px;
+   text-transform:uppercase ;
+}
+
+.ajout-annonce:hover{
+    background: #d87710;
+    transition: ease-out;
+}
+
+header .navbar li a:hover{
+    color: #fb911f;
+    border-bottom: 2px solid #fb911f;
+}
+
+
+
+header.sticky{
+    background: #fff;
+    padding: 10px 10px;
+    box-shadow: 0px 5px 20px rgba(0,0,0, 0.05);
+}
+
+header.sticky .logo{
+    color: #000;
+}
+
+header.sticky .navbar li a {
+    color: #000;
+}
+
+header.sticky li a:hover{
+    color: #fb911f;
+    border-bottom: 2px solid #fb911f;
+}
+
+@media (max-width: 991px) {
+header, 
+header.sticky{
+    padding: 10px 20px;
+}
+
+header .navbar li{
+    margin-left: 0px;
+}
+
+header .navbar li a {
+    text-decoration: none;
+    color: #111;
+    font-size: 1.6em;
+    font-weight: 300;
+}
+
+.navbar{
+    display: none;
+}
+section{
+    padding: 20px;
+}
+
+.p {
+    width: 160px;
+    height: 80px;
+    padding: 20px;
+    border: 8px solid red;
+    background: yellow;
+  }
