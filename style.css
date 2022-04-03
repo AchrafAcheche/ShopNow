@@ -9,7 +9,20 @@ body{
     margin:0 auto;
     margin-top:10%;
 }
+.logo{
+    color:#000;
+    font-weight: bold;
+    font-size: 2em;
+    text-decoration: none;
+  }
+  .logo span{
+    color: #fb911f;
+  }
+  
 /* Bordered form */
+span{
+color: #fb911f;
+}
 form {
     width:100%;
     padding: 30px;
@@ -20,6 +33,7 @@ form {
 #container h1{
    margin-left: auto;
    text-align:center ;
+
   
 margin: auto;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
@@ -39,8 +53,8 @@ input[type=text], input[type=password],input[type=email] ,input[type=Date] {
 
 
 input[type=submit] {
-    background-color: rgb(21, 22, 105);
-    color: rgb(231, 236, 232);
+    background-color: #fb911f;
+    color: black;
     padding: 15px 2px;
     margin: 8px 1px;
     border: none;
@@ -50,8 +64,8 @@ input[type=submit] {
    
 }
 input[type=submit]:hover {
-    background-color: rgb(21, 22, 105);
-    color: #f8f2edcc;
+    background-color: #fb911f;
+    color: black;
     border: 1px solid hsl(30, 11%, 96%);
     border-radius: 15px;
 }
@@ -59,4 +73,13 @@ p{
      font-size:15px;  
      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
      text-align:center ; 
+     color: #fb911f;
+}
+a{
+    color: #d47209;
+}
+select{
+    margin-top: 10px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-bottom: 10px;
 }

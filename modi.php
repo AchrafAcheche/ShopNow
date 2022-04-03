@@ -2,23 +2,24 @@
 
 <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="style.css" media="screen" type="text/css" />
+    <link rel="stylesheet" href="style2.css" media="screen" type="text/css" />
     <title>Modification </title>
 
 </head>
 
 <body>
+<header> <a href="accueil.php" class="logo"><span>S</span>hop<span>N</span>ow</a></header>
     <div id="container">
         <div>
       
 
             <form name="f" action="modification.php" method="POST">
                 <h1>Modifier un Article</h1>
-                <label><b>Nom d'article</b></label>
+                <hr>
+               
 
-                <div>
-        
-                    <?php
+                <?php
+                    session_start();
                     $servername='localhost:3308';
                     $user='root';
                     $pass='';
@@ -30,55 +31,33 @@
                     }
             
                   
-                     
-                        $array = array();
-                        $sql = "SELECT * FROM articles ";
-                        if($result = mysqli_query($link, $sql)) {
-                            if(mysqli_num_rows($result) > 0) {
-                                while($row = mysqli_fetch_array($result)){
-                                    $array[] = $row['nomart'];
-                                    
-                                }
-                                
-                            }
-                            else {
-                                echo "Something went wrong...";
-                            }
-                        }
-                        else {
-                            echo "ERROR: Could not execute $sql." . mysql_error($link);
-                        }
-                    
-            
-                    echo "<select name='noart'>";
-                    foreach($array as $option){
-                        if($dbselected == $option) {
-                            echo "<option selected='selected' value='$option'>$option</option>";
-                        }
-                        else {
-                            echo "<option value='$option'>$option</option>";
-                        }
-                    }
-                    echo "</select>";
+                    $username =$_SESSION['username'];
                     ?>
                     
-                    </div>
+            
+                   
 
 
 
-
-                
-                <label><b>Nom du compte</b></label>
-                <input type="text" placeholder="Entrer le nom du compte" name="username" required>
                 <label><b>Nouveau nom d'article</b></label>
-                <input type="text" placeholder="Entrer votre Username" name="nomart" required>
+                <?php $no=$_SESSION['nomart'];
+                echo "<input type='text' value=".$no." name='nomart' required>";
+                ?>
                 <label><b>Description d'article</b></label>
-                <input type="text" placeholder="Entrer votre description" name="descart" required>
+                <?php $na=$_SESSION['descart'];
+                echo "<input type='text' value=".$na." name='descart' required>";
+                ?>
+                <label><b>Image d'article</b></label>
+                <?php $ni=$_SESSION['imgpath'];
+                echo "<input type='text' value=".$ni." name='imgpath' required>";
+                ?>
                 <label><b>Prix d'article</b></label>
-                <input type="text" placeholder="Entrer votre prix" name="prixart" required>
+                <?php $np=$_SESSION['prixart'];
+                echo "<input type='text' value=".$np." name='prixart' required>";
+                ?>
                 <label><b>Categorie d'article</b></label>
                 <br>
-                <select name="catyart">
+                <select selected="2" name="catyart">
                 <option value="vehicule">Véhicules</option>
                 <option value="immobilier">Immobilier</option>
                 <option value="informatique et multimedia">Informatique et Multimedia</option>
@@ -89,7 +68,7 @@
                 <option value="entreprise">Entreprises</option>
                 </select>
                 <input type="submit" id='submit' value='Modifier'>
-                <p> <a href="accueil.php"> Retournez ?</a></p>
+                
             </form>
         </div>
     </div>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="style2.css" media="screen" type="text/css" />
-    <title>Supprimer</title>
+    <title>Modification </title>
 
 </head>
 
@@ -11,9 +11,10 @@
 <header> <a href="accueil.php" class="logo"><span>S</span>hop<span>N</span>ow</a></header>
     <div id="container">
         <div>
+      
 
-            <form name="f" action="supprimer.php" method="POST">
-                <h1>Supprimer un Article</h1>
+            <form name="f" action="modi2.php" method="POST">
+                <h1>Sélectioner un Article</h1>
                 <hr>
                 <label><b>Nom d'article</b></label>
 
@@ -32,9 +33,10 @@
                     }
             
                   
-                     $username=$_SESSION['username'];
+                    $username =$_SESSION['username'];
+                    
                         $array = array();
-                        $sql = "SELECT * FROM articles WHERE username='$username'";
+                        $sql = "SELECT * FROM articles where username = '$username' ";
                         if($result = mysqli_query($link, $sql)) {
                             if(mysqli_num_rows($result) > 0) {
                                 while($row = mysqli_fetch_array($result)){
@@ -66,8 +68,10 @@
                     
                     </div>
 
-               
-                <input type="submit" id='submit' value='Supprimer'>
+
+
+                
+                <input type="submit" name='submit' value='Modifier'>
                 
             </form>
         </div>
@@ -75,3 +79,4 @@
 </body>
 
 </html>
+
