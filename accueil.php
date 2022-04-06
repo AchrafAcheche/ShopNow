@@ -21,20 +21,23 @@
         $pass = '';
         $link = mysqli_connect($servername, $user, $pass, 'projfed');
         if (isset($_SESSION['add'])) {
-        if ($_SESSION['add'] == 'true') {
-            echo "<script type='text/javascript'>alert('Article Ajouté');</script>";
-            unset($_SESSION['add']);}
+            if ($_SESSION['add'] == 'true') {
+                echo "<script type='text/javascript'>alert('Article Ajouté');</script>";
+                unset($_SESSION['add']);
+            }
         }
         if (isset($_SESSION['modi'])) {
             if ($_SESSION['modi'] == 'true') {
                 echo "<script type='text/javascript'>alert('Article Modifié');</script>";
-                unset($_SESSION['modi']);}
+                unset($_SESSION['modi']);
             }
-            if (isset($_SESSION['supp'])) {
-                if ($_SESSION['supp'] == 'true') {
-                    echo "<script type='text/javascript'>alert('Article Supprimé');</script>";
-                    unset($_SESSION['supp']);}
-                }
+        }
+        if (isset($_SESSION['supp'])) {
+            if ($_SESSION['supp'] == 'true') {
+                echo "<script type='text/javascript'>alert('Article Supprimé');</script>";
+                unset($_SESSION['supp']);
+            }
+        }
         if (isset($_SESSION['login'])) {
             if ($_SESSION['login'] == 'true') {
                 echo '<ul class="navbar">';
@@ -119,6 +122,7 @@
             }
 
             ?>
+        </div>
 
 </body>
 
