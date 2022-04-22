@@ -20,16 +20,6 @@ input[type=image] {
     padding: 2px 20px;
 }
 
-.boxs{
-    padding: 2px 20px;
-}
-.box{
-    box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 0px 1px inset, rgba(0, 0, 0, 0.9) 0px 0px 0px 1px;
-    text-align: center;
-   height: 200px;
-  width: 200px;
-  
-}
 
 .section3{
     padding: 30px;
@@ -178,3 +168,73 @@ section{
     border: 8px solid red;
     background: yellow;
   }
+}
+.h3{
+    color: rgb(59, 49, 49);
+    font: bold;
+    align-content: center;   
+    text-align: center;
+}
+.produit{
+    max-width: 1080px;
+    margin: auto;
+    padding-left: 25px;
+    padding-right: 25px;
+
+}
+.row{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    text-align: center;
+}
+.col{
+    flex-basis: 25%;
+    padding:10px;
+    min-width: width 150px;
+    margin-bottom: 50px;
+    border-radius: 15px;
+    text-align: center;
+
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+
+}
+.col img{
+    width:40%;
+    border-radius: 15px;
+    
+}
+.p2{
+    color:rgb(12, 9, 9);
+}
+
+.col .p2{
+    font-size: 18px;
+    font-style:oblique;
+    font:bold 3em/1.5;
+}
+.titre{
+   text-align: center;
+   margin: 0 auto 60px;
+   position: relative;
+   line-height: 40px;
+   color: #555;
+} 
+.titre::after{
+   content: '';
+   background: #ff523b;
+   width:80px;
+   height: 5px;
+   border-radius:5px;
+   position: absolute;
+   bottom:0 ;
+   left:50%;
+   transform: translateX(-50%);
+}
+.prix{
+   text-align: right;
+   color: black;
+  
+         font: italic normal bold normal 3em/1.5 Helvetica, Arial, sans-serif;
+}

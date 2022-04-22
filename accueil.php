@@ -62,32 +62,36 @@
         }
 
         ?>
+    </header>
+    <section class="section3">
+
+    </section>
+    <section class="section2">
+        <P>Choisissez une catégorie</P>
+        <form name="ff" action="filter.php" method="POST">
+            <select selected="1" name="catyart">
+                <option value="all">Tous les Catégories</option>
+                <option value="vehicule">Véhicules</option>
+                <option value="immobilier">Immobilier</option>
+                <option value="informatique et multimedia">Informatique et Multimedia</option>
+                <option value="maison et jardin">Maison et Jardin</option>
+                <option value="loisirs et divertissement">Loisirs et Divertissement</option>
+                <option value="habillement">Habillement et Bien Etre</option>
+                <option value="emploi et services">Emploi et Services</option>
+                <option value="entreprise">Entreprises</option>
+            </select>
+            <input type="image" src="images\i23.PNG" width="120" height="70">
+
+        </form>
 
 
 
 
 
-
-
-        <section class="section3">
-
-        </section>
-        <section class="section2">
-            <P>Choisissez une catégorie</P>
-            <form>
-                <input type="image" src="images\i2.JPG" name="catyart">
-                <input type="image" src="images\i3.JPG" name="catyart">
-                <input type="image" src="images\i4.JPG" name="catyart">
-                <input type="image" src="images\i5.JPG" name="catyart"><BR>
-                <input type="image" src="images\i6.JPG" name="catyart">
-                <input type="image" src="images\i7.JPG" name="catyart">
-                <input type="image" src="images\i8.JPG" name="catyart">
-                <input type="image" src="images\i9.JPG" name="catyart">
-            </form>
-
-        </section>
-
-        <div class='boxs'>
+    </section>
+    <div class="produit">
+        <h2 class="titre"> Les Produits Disponibles</h2>
+        <div class='col'>
             <?php
 
 
@@ -98,21 +102,50 @@
 
 
             $array = array();
-            $sql = "SELECT * FROM articles ";
+            if (isset($_SESSION['catyart'])) {
+                if ($_SESSION['catyart']=="all"){
+            $sql0 = "SELECT * FROM articles ";}
+            else
+            {
+                $caty=$_SESSION['catyart'];
+                $sql0 = "SELECT * FROM articles where catyart ='$caty'";
+            }
+            }else{$sql0 = "SELECT * FROM articles";}
+            $sql="";
+            $sql=$sql0;
+
+
+
+
+
             if ($result = mysqli_query($link, $sql)) {
                 if (mysqli_num_rows($result) > 0) {
                     while ($row = mysqli_fetch_array($result)) {
-                        echo "<div class='box'>";
-                        echo $row['nomart'];
+
+
+
+                        echo "<div class='col'>";
+                        echo "<h3 class='h3' > " . $row['nomart'] . "</h3>";
                         echo "<br>";
-                        echo $row['username'];
+                        echo "<img src=" . $row['imgpath'] . ">";
                         echo "<br>";
-                        echo $row['descart'];
+                        echo "<p class='p2'>Publiée Par :" . $row['username'] . "<br><br>";
+                        echo  $row['descart'] . '<br> <br> <br> <br>';
                         echo "<br>";
-                        echo $row['prixart'];
-                        echo "<br>";
-                        echo $row['username'];
-                        echo "</div>";
+                        echo "<b> ";
+                        $user = $row['username'];
+                        $sql1 = "SELECT * FROM users where username ='$user'";
+                        if ($result1 = mysqli_query($link, $sql1)) {
+                            if (mysqli_num_rows($result1) > 0) {
+                                while ($row1 = mysqli_fetch_array($result1)) {
+                                    echo $row1['telephone'];
+                                }
+                            }
+                        }
+
+                        echo "</b>         ********              <b>" . $row['prixart'] . "</b></p>";
+
+                        echo '</div>';
                     }
                 } else {
                     echo "Something went wrong...";
@@ -121,8 +154,13 @@
                 echo "ERROR: Could not execute $sql." . mysqli_error($link);
             }
 
+
+
+
             ?>
+
         </div>
+    </div>
 
 </body>
 

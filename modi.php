@@ -25,6 +25,7 @@
                     $pass='';
                 
                     $link=mysqli_connect($servername,$user,$pass,'projfed');
+                    
             
                     if($link === false){
                         die("Error: Could not connect." . mysqli_connect_error());

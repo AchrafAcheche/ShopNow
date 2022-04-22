@@ -11,7 +11,7 @@
         $username =$_SESSION['username'];
         $nomart =$_POST['nomart'];
         $descart =$_POST['descart'];
-        $prixart =$_POST['prixart'];
+        $prixart =$_POST['prixart']; 
         $catyart =$_POST['catyart'];
         $imgpath =$_POST['imgpath'];
     

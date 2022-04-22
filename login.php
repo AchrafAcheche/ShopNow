@@ -22,6 +22,11 @@ echo '</script>';
 $_SESSION['error'] = "";
 
 }}
+if (isset($_SESSION['login'])) {
+  if ($_SESSION['login'] == 'true') {
+    header("Location: accueil.php");
+  }
+}
 ?>
 <html>
   <head>
